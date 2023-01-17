@@ -11,8 +11,11 @@ pipeline {
         stage('version') {
             steps {
                 sh'python --version'
+                sh'pwd'
             }
         }
+
+        
         
         stage('Deploy') {
             steps {
