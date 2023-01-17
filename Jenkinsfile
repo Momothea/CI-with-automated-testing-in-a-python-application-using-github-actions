@@ -15,7 +15,13 @@ pipeline {
             }
         }
 
-        
+        stage('Building and running') {
+            steps {
+                sh'pip install -r requirements.txt'
+                
+            }
+        }
+
         
         stage('Deploy') {
             steps {
