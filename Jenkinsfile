@@ -10,7 +10,7 @@ pipeline {
         
         stage('version') {
             steps {
-                bat'python --version'
+                sh'python --version'
             }
         }
         
