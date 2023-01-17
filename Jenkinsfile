@@ -2,16 +2,22 @@ pipeline {
     agent any
 
     stages {
-        stage('Preparation') { // for display purposes
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
         
-    }
-    stage('Build') {
-        // Run the maven build
+        stage('Build') {
+            steps {
+                echo 'Hello World'
+            }
+        }
         
-    }
-    stage('Results') {
-        
-    }
-        
+        stage('Deploy') {
+            steps {
+                echo 'Hello World'
+            }
+        }
     }
 }
