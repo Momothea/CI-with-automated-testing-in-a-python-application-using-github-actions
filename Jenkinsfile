@@ -15,10 +15,9 @@ pipeline {
             }
         }
 
-        stage('Building and running') {
+        stage('Installing requirements') {
             steps {
                 sh'pip install -r requirements.txt'
-                sh'python app.py'
             }
         }
 
@@ -28,7 +27,12 @@ pipeline {
             }
         }
 
-        
+        stage('build a Docker image and test container') {
+            steps {
+                sh'docker build -t python_test_jk .'
+                sh'docker run -d -p 5000:5000 python_test_jk'
+            }
+        }
         
         stage('Deploy') {
             steps {
